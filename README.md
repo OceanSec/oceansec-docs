@@ -38,7 +38,7 @@ O objetivo é fornecer uma base leve de consulta para troubleshooting, onboardin
 
 Este projeto é publicado via GitHub Pages:
 
-https://docs-oceansec.github.io
+https://oceansec.github.io/oceansec-docs/
 
 ---
 
