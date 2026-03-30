@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('navSearch');if(!q)return;q.addEventListener('input',()=>{const t=q.value.toLowerCase().trim();document.querySelectorAll('.nav a').forEach(a=>{a.style.display=a.textContent.toLowerCase().includes(t)?'block':'none';});});});
