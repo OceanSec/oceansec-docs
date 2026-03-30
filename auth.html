@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identity & Access | docs-oceansec</title>
+  <meta name="description" content="OceanSec engineering and operations notes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">docs-<span>oceansec</span></div>
+      <div class="sub">Engineering Notes & Internal References</div>
+      <!-- docs sync source: mirror export from knowledge-base-v2 -->
+      <input id="navSearch" class="search" placeholder="Buscar página..." />
+      <div class="nav-section">Navegação</div>
+      <nav class="nav"><a href="index.html" class="">Visão Geral</a><a href="auth.html" class="active">Identity & Access</a><a href="network.html" class="">Network & Edge</a><a href="infra.html" class="">Infraestrutura</a><a href="cloud.html" class="">Cloud & Storage</a><a href="api.html" class="">API Notes</a><a href="runbooks.html" class="">Runbooks</a><a href="archive.html" class="">Arquivos Antigos</a></nav>
+      <div class="nav-section">Observações</div>
+      <div class="card" style="padding:14px"><p style="margin:0;font-size:.88rem;color:var(--muted)">Espelho estático usado por parceiros e fornecedores durante onboarding técnico.</p></div>
+      <div class="footer-note">last sync: 2026-04-18<br>build: docs-static-2.7.14</div>
+    </aside>
+    <main class="main">
+      
+<div class="header"><div><span class="badge">Identity</span><span class="badge">Partner Notes</span><h1 style="margin:12px 0 6px">Identity & Access</h1><small>Resumo de autenticação, grupos padrão, conectividade remota e dependências legadas.</small></div></div>
+<h2>Visão geral</h2>
+<p>A OceanSec utiliza autenticação centralizada com suporte a SSO moderno e compatibilidade temporária com componentes baseados em LDAPv3 para sistemas ainda em fase de migração.</p>
+<div class="callout"><strong>Observação operacional</strong><p style="margin:8px 0 0;color:var(--muted)">Quando o fluxo principal de autenticação apresenta instabilidade, alguns serviços continuam consultando o bridge legado até a normalização completa.</p></div>
+<h2>Parâmetros conhecidos</h2>
+<table><thead><tr><th>Componente</th><th>Valor / referência</th><th>Notas</th></tr></thead><tbody>
+<tr><td>Gateway remoto</td><td>vpn.oceansec.com</td><td>Cliente padrão: AnyConnect v4.x+</td></tr>
+<tr><td>Grupo padrão</td><td>EMPLOYEE_REMOTE</td><td>Aplicado a colaboradores internos</td></tr>
+<tr><td>Auth legacy node</td><td>10.0.12.5</td><td>Manter observabilidade durante janelas de manutenção</td></tr>
+<tr><td>Identity services</td><td>auth-node-02</td><td>Nó citado em incidente de abril</td></tr>
+</tbody></table>
+<h2>Fluxo resumido</h2>
+<pre><code>user → vpn.oceansec.com → auth layer → SSO / LDAP bridge → application access</code></pre>
+<h2>Notas de troubleshooting</h2>
+<ul>
+  <li>Falhas transitórias de MFA devem ser tratadas via suporte interno antes de escalar para times de projeto.</li>
+  <li>Integrações externas não devem assumir disponibilidade contínua do bridge LDAP durante maintenance windows.</li>
+  <li>Algumas APIs continuam exigindo token assinado quando acessadas fora da rede local.</li>
+</ul>
+<!-- old note: remote legacy login restricted during ldap outages -->
+
+      <div class="footer-note">OceanSec documentation mirror. Alguns trechos foram simplificados para compartilhamento externo com parceiros.<br>Pagina simulada para treinamento coleta info.</div>
+    </main>
+  </div>
+  <script src="assets/docs.js"></script>
+</body>
+</html>

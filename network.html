@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network & Edge | docs-oceansec</title>
+  <meta name="description" content="OceanSec engineering and operations notes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">docs-<span>oceansec</span></div>
+      <div class="sub">Engineering Notes & Internal References</div>
+      <!-- docs sync source: mirror export from knowledge-base-v2 -->
+      <input id="navSearch" class="search" placeholder="Buscar página..." />
+      <div class="nav-section">Navegação</div>
+      <nav class="nav"><a href="index.html" class="">Visão Geral</a><a href="auth.html" class="">Identity & Access</a><a href="network.html" class="active">Network & Edge</a><a href="infra.html" class="">Infraestrutura</a><a href="cloud.html" class="">Cloud & Storage</a><a href="api.html" class="">API Notes</a><a href="runbooks.html" class="">Runbooks</a><a href="archive.html" class="">Arquivos Antigos</a></nav>
+      <div class="nav-section">Observações</div>
+      <div class="card" style="padding:14px"><p style="margin:0;font-size:.88rem;color:var(--muted)">Espelho estático usado por parceiros e fornecedores durante onboarding técnico.</p></div>
+      <div class="footer-note">last sync: 2026-04-18<br>build: docs-static-2.7.14</div>
+    </aside>
+    <main class="main">
+      
+<div class="header"><div><span class="badge">Network</span><span class="badge">Edge</span><h1 style="margin:12px 0 6px">Network & Edge</h1><small>Resumo de proxies, DNS, borda e observações sobre serviços expostos.</small></div></div>
+<h2>Edge services</h2>
+<table><thead><tr><th>Serviço</th><th>Status esperado</th><th>Observação</th></tr></thead><tbody>
+<tr><td>Portal Principal</td><td>HTTP/HTTPS</td><td>Passa pela camada de edge pública</td></tr>
+<tr><td>Developer Hub</td><td>HTTP/HTTPS</td><td>Conteúdo técnico espelhado para parceiros</td></tr>
+<tr><td>VPN Gateway (Miami Hub)</td><td>Operacional</td><td>Cluster VPN-MIA-01</td></tr>
+<tr><td>Proxy layer</td><td>edge-prx-01 / edge-prx-03</td><td>Redistribuição automática em caso de saturação</td></tr>
+</tbody></table>
+<h2>DNS e resolução</h2>
+<p>Entradas temporárias de ambientes de homologação devem ser removidas após encerramento de projeto. O histórico recente mostrou incidentes decorrentes de registros mantidos além do período previsto.</p>
+<div class="callout"><strong>Boas práticas</strong><p style="margin:8px 0 0;color:var(--muted)">Evitar deixar ambientes de staging publicados em DNS público. Para troubleshooting, prefira apontamentos temporários com revisão formal de redes.</p></div>
+<h2>Segmentação de referência</h2>
+<ul>
+  <li>Pool principal de análise: <code>10.0.12.18</code></li>
+  <li>Subnet transacional observada em incidentes: <code>10.0.99.0/24</code></li>
+  <li>Faixa interna de desenvolvimento: <code>10.0.45.x</code></li>
+</ul>
+<!-- note-to-network: review DNS approvals before publishing temporary records -->
+
+      <div class="footer-note">OceanSec documentation mirror. Alguns trechos foram simplificados para compartilhamento externo com parceiros.<br>Pagina simulada para treinamento coleta info.</div>
+    </main>
+  </div>
+  <script src="assets/docs.js"></script>
+</body>
+</html>

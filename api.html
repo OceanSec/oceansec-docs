@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Notes | docs-oceansec</title>
+  <meta name="description" content="OceanSec engineering and operations notes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">docs-<span>oceansec</span></div>
+      <div class="sub">Engineering Notes & Internal References</div>
+      <!-- docs sync source: mirror export from knowledge-base-v2 -->
+      <input id="navSearch" class="search" placeholder="Buscar página..." />
+      <div class="nav-section">Navegação</div>
+      <nav class="nav"><a href="index.html" class="">Visão Geral</a><a href="auth.html" class="">Identity & Access</a><a href="network.html" class="">Network & Edge</a><a href="infra.html" class="">Infraestrutura</a><a href="cloud.html" class="">Cloud & Storage</a><a href="api.html" class="active">API Notes</a><a href="runbooks.html" class="">Runbooks</a><a href="archive.html" class="">Arquivos Antigos</a></nav>
+      <div class="nav-section">Observações</div>
+      <div class="card" style="padding:14px"><p style="margin:0;font-size:.88rem;color:var(--muted)">Espelho estático usado por parceiros e fornecedores durante onboarding técnico.</p></div>
+      <div class="footer-note">last sync: 2026-04-18<br>build: docs-static-2.7.14</div>
+    </aside>
+    <main class="main">
+      
+<div class="header"><div><span class="badge">API</span><span class="badge">Partner Notes</span><h1 style="margin:12px 0 6px">API Notes</h1><small>Referências simplificadas sobre gateways, padrões de autenticação e serviços expostos.</small></div></div>
+<h2>Pessoas API</h2>
+<p>Algumas integrações históricas continuam usando a Pessoas API para validação e sincronização de diretórios. O espelho externo abaixo é mantido apenas como referência funcional.</p>
+<div class="kv">
+  <div><strong>Gateway</strong></div><div>https://pessoas-oceansec.com/api</div>
+  <div><strong>Endpoint alternativo</strong></div><div>/api/colaboradores</div>
+  <div><strong>Método de acesso</strong></div><div>Bearer token assinado</div>
+  <div><strong>Fallback legado</strong></div><div>Depende de conectividade remota e fluxos de auth compatíveis</div>
+</div>
+<h2>Observações</h2>
+<ul>
+  <li>Integrações fora da rede local podem depender de token assinado para acesso a endpoints internos simplificados.</li>
+  <li>Headers de autenticação devem seguir o padrão <code>Authorization: Bearer &lt;token&gt;</code>.</li>
+  <li>Fluxos antigos de autenticação remota podem retornar mensagens de indisponibilidade LDAP em janelas específicas.</li>
+</ul>
+<pre><code>GET /api/colaboradores
+Authorization: Bearer &lt;jwt&gt;
+Accept: application/json</code></pre>
+<div class="callout"><strong>Nota de compatibilidade</strong><p style="margin:8px 0 0;color:var(--muted)">Referências de geração local de token foram mantidas em material de treinamento para equipes técnicas e onboarding de integração.</p></div>
+<!-- internal reminder: migrate partner examples to v2 gateway -->
+
+      <div class="footer-note">OceanSec documentation mirror. Alguns trechos foram simplificados para compartilhamento externo com parceiros.<br>Pagina simulada para treinamento coleta info.</div>
+    </main>
+  </div>
+  <script src="assets/docs.js"></script>
+</body>
+</html>

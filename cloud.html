@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud & Storage | docs-oceansec</title>
+  <meta name="description" content="OceanSec engineering and operations notes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">docs-<span>oceansec</span></div>
+      <div class="sub">Engineering Notes & Internal References</div>
+      <!-- docs sync source: mirror export from knowledge-base-v2 -->
+      <input id="navSearch" class="search" placeholder="Buscar página..." />
+      <div class="nav-section">Navegação</div>
+      <nav class="nav"><a href="index.html" class="">Visão Geral</a><a href="auth.html" class="">Identity & Access</a><a href="network.html" class="">Network & Edge</a><a href="infra.html" class="">Infraestrutura</a><a href="cloud.html" class="active">Cloud & Storage</a><a href="api.html" class="">API Notes</a><a href="runbooks.html" class="">Runbooks</a><a href="archive.html" class="">Arquivos Antigos</a></nav>
+      <div class="nav-section">Observações</div>
+      <div class="card" style="padding:14px"><p style="margin:0;font-size:.88rem;color:var(--muted)">Espelho estático usado por parceiros e fornecedores durante onboarding técnico.</p></div>
+      <div class="footer-note">last sync: 2026-04-18<br>build: docs-static-2.7.14</div>
+    </aside>
+    <main class="main">
+      
+<div class="header"><div><span class="badge">Cloud</span><span class="badge">Storage</span><h1 style="margin:12px 0 6px">Cloud & Storage</h1><small>Buckets, naming conventions, retenção e procedimentos temporários de incidentes.</small></div></div>
+<h2>Buckets conhecidos</h2>
+<table><thead><tr><th>Bucket</th><th>Uso</th><th>Notas</th></tr></thead><tbody>
+<tr><td>assets-oceansec</td><td>Assets públicos</td><td>Conteúdo institucional e documentos</td></tr>
+<tr><td>logs-oceansec</td><td>Artefatos temporários</td><td>Usado em incidentes e triagens</td></tr>
+<tr><td>ri-oceansec</td><td>Investor Relations</td><td>Documentação regulatória e relatórios</td></tr>
+<tr><td>oceansec-red-ops-prod</td><td>Operações ofensivas</td><td>Referência histórica em documentos antigos</td></tr>
+</tbody></table>
+<h2>Prática operacional</h2>
+<p>Durante incidentes, logs e artefatos de suporte podem ser direcionados temporariamente para storage emergencial para análise rápida, antes de serem realocados ou terem permissões ajustadas.</p>
+<div class="callout"><strong>Exemplo documentado</strong><p style="margin:8px 0 0;color:var(--muted)">Incidente de 24 de março: artefatos temporários foram redirecionados para <code>s3://oceansec-logs-temp/incidents/mar24/</code> até a conclusão da validação.</p></div>
+<h2>Notas de governança</h2>
+<ul>
+  <li>Evitar referenciar buckets temporários em documentação pública de integração.</li>
+  <li>Fluxos cross-account devem ser revisados após o encerramento de incidentes.</li>
+  <li>Storage temporário não deve permanecer como dependência operacional permanente.</li>
+</ul>
+<!-- temp cross-account audit note remained documented longer than expected -->
+
+      <div class="footer-note">OceanSec documentation mirror. Alguns trechos foram simplificados para compartilhamento externo com parceiros.<br>Pagina simulada para treinamento coleta info.</div>
+    </main>
+  </div>
+  <script src="assets/docs.js"></script>
+</body>
+</html>

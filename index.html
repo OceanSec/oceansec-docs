@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visão Geral | docs-oceansec</title>
+  <meta name="description" content="OceanSec engineering and operations notes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">docs-<span>oceansec</span></div>
+      <div class="sub">Engineering Notes & Internal References</div>
+      <!-- docs sync source: mirror export from knowledge-base-v2 -->
+      <input id="navSearch" class="search" placeholder="Buscar página..." />
+      <div class="nav-section">Navegação</div>
+      <nav class="nav"><a href="index.html" class="active">Visão Geral</a><a href="auth.html" class="">Identity & Access</a><a href="network.html" class="">Network & Edge</a><a href="infra.html" class="">Infraestrutura</a><a href="cloud.html" class="">Cloud & Storage</a><a href="api.html" class="">API Notes</a><a href="runbooks.html" class="">Runbooks</a><a href="archive.html" class="">Arquivos Antigos</a></nav>
+      <div class="nav-section">Observações</div>
+      <div class="card" style="padding:14px"><p style="margin:0;font-size:.88rem;color:var(--muted)">Espelho estático usado por parceiros e fornecedores durante onboarding técnico.</p></div>
+      <div class="footer-note">last sync: 2026-04-18<br>build: docs-static-2.7.14</div>
+    </aside>
+    <main class="main">
+      
+<div class="header"><div><span class="badge">External Mirror</span><span class="badge">Partner Access</span><h1 style="margin:12px 0 6px">OceanSec Engineering Reference</h1><small>Conjunto consolidado de anotações técnicas, padrões operacionais e referências de integração.</small></div><div class="callout" style="max-width:340px"><strong>Status do repositório</strong><p style="margin:8px 0 0;color:var(--muted)">Conteúdo sincronizado a partir do ambiente interno de documentação para apoiar times de integração, fornecedores e equipes de projeto.</p></div></div>
+<div class="hero"><h1>Visão Geral</h1><p>Este portal reúne notas de autenticação, edge, infraestrutura, armazenamento cloud, documentação de APIs e runbooks operacionais. O foco é manter uma referência leve para troubleshooting e onboarding técnico.</p></div>
+<div class="grid">
+<div class="card"><h3>Identity & Access</h3><p>SSO, LDAP legado, grupos padrão e dependências do gateway remoto.</p></div>
+<div class="card"><h3>Network & Edge</h3><p>Proxies, VPN, edge nodes e observações sobre resolução DNS e rotas.</p></div>
+<div class="card"><h3>Cloud & Storage</h3><p>Buckets, padrões de naming, retenção e fluxos temporários de incidentes.</p></div>
+<div class="card"><h3>Runbooks</h3><p>Notas rápidas para rollback, manutenção, sincronização e troubleshooting.</p></div>
+</div>
+<h2>Ambientes de referência</h2>
+<div class="kv">
+  <div><strong>Primary Region</strong></div><div>us-east-1</div>
+  <div><strong>Core SIEM</strong></div><div>10.0.12.18</div>
+  <div><strong>Legacy Auth Node</strong></div><div>10.0.12.5</div>
+  <div><strong>Homologação Web</strong></div><div>hml-web-01.oceansec.com</div>
+  <div><strong>Developer Hub</strong></div><div>dev.oceansec.com</div>
+</div>
+<h2>Páginas mais acessadas</h2>
+<table><thead><tr><th>Página</th><th>Uso</th><th>Observação</th></tr></thead><tbody>
+<tr><td><a href="auth.html">Identity & Access</a></td><td>Onboarding, SSO, VPN</td><td>Inclui grupos padrão e fallback legado</td></tr>
+<tr><td><a href="cloud.html">Cloud & Storage</a></td><td>Integrações, buckets, retenção</td><td>Notas de incidentes e fluxos temporários</td></tr>
+<tr><td><a href="api.html">API Notes</a></td><td>Pessoas API, gateways e headers</td><td>Uso externo simplificado</td></tr>
+<tr><td><a href="runbooks.html">Runbooks</a></td><td>Troubleshooting e rollback</td><td>Resumo operacional para parceiros</td></tr>
+</tbody></table>
+<h2>Notas rápidas</h2>
+<ul>
+  <li>Evitar uso de ambientes de homologação como referência primária em integrações de terceiros.</li>
+  <li>Durante incidentes, artefatos temporários podem ser redirecionados para storage emergencial antes de normalização.</li>
+  <li>Alguns serviços ainda mantêm compatibilidade com fluxos legados enquanto a migração para a arquitetura atual não é concluída.</li>
+</ul>
+<!-- legacy mirror source: kb-sync/oceansec-partner-export -->
+
+      <div class="footer-note">OceanSec documentation mirror. Alguns trechos foram simplificados para compartilhamento externo com parceiros.<br>Pagina simulada para treinamento coleta info.</div>
+    </main>
+  </div>
+  <script src="assets/docs.js"></script>
+</body>
+</html>

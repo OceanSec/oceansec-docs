@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infraestrutura | docs-oceansec</title>
+  <meta name="description" content="OceanSec engineering and operations notes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">docs-<span>oceansec</span></div>
+      <div class="sub">Engineering Notes & Internal References</div>
+      <!-- docs sync source: mirror export from knowledge-base-v2 -->
+      <input id="navSearch" class="search" placeholder="Buscar página..." />
+      <div class="nav-section">Navegação</div>
+      <nav class="nav"><a href="index.html" class="">Visão Geral</a><a href="auth.html" class="">Identity & Access</a><a href="network.html" class="">Network & Edge</a><a href="infra.html" class="active">Infraestrutura</a><a href="cloud.html" class="">Cloud & Storage</a><a href="api.html" class="">API Notes</a><a href="runbooks.html" class="">Runbooks</a><a href="archive.html" class="">Arquivos Antigos</a></nav>
+      <div class="nav-section">Observações</div>
+      <div class="card" style="padding:14px"><p style="margin:0;font-size:.88rem;color:var(--muted)">Espelho estático usado por parceiros e fornecedores durante onboarding técnico.</p></div>
+      <div class="footer-note">last sync: 2026-04-18<br>build: docs-static-2.7.14</div>
+    </aside>
+    <main class="main">
+      
+<div class="header"><div><span class="badge">Infra</span><span class="badge">Legacy</span><h1 style="margin:12px 0 6px">Infraestrutura</h1><small>Inventário resumido de serviços, versões e plataformas ainda referenciadas por times de integração.</small></div></div>
+<h2>Inventário resumido</h2>
+<table><thead><tr><th>Serviço</th><th>Versão / estado</th><th>Nota operacional</th></tr></thead><tbody>
+<tr><td>Jenkins</td><td>2.150.1</td><td>Fora da baseline interna; upgrade pendente</td></tr>
+<tr><td>Nginx (Edge Proxy)</td><td>1.24.0</td><td>Operação conjunta com fornecedor FinSecureWeb</td></tr>
+<tr><td>Redis</td><td>6.2.6</td><td>Migração planejada para 7.x</td></tr>
+<tr><td>PHP (Legacy CRM)</td><td>7.4.33</td><td>EOL; ainda em <code>hml-web-01.oceansec.com</code></td></tr>
+<tr><td>GitLab Self-Hosted</td><td>Interno</td><td>Uso por times de plataforma e CI/CD</td></tr>
+</tbody></table>
+<h2>Stacks recorrentes</h2>
+<ul>
+  <li>Microsserviços em Kubernetes 1.27 sobre AWS EKS</li>
+  <li>LDAPv3 legado em processo de substituição por SSO central</li>
+  <li>Firewalls de borda, SD-WAN e edge proxies</li>
+  <li>SIEM central com trilhas de eventos e correlação contínua</li>
+</ul>
+<h2>Notas de sustentação</h2>
+<p>Ambientes legados podem permanecer ativos por dependência de aplicações administrativas e integrações históricas. Sempre validar se a documentação consultada refere-se à versão atual ou a trilhas de migração ainda abertas.</p>
+<pre><code># Sync Staging with Prod (Financials)
+aws s3 sync s3://oceansec-finance-prod s3://oceansec-finance-staging \
+  --region us-east-1 \
+  --profile default</code></pre>
+<!-- fallback token was documented elsewhere for temporary staging sync -->
+
+      <div class="footer-note">OceanSec documentation mirror. Alguns trechos foram simplificados para compartilhamento externo com parceiros.<br>Pagina simulada para treinamento coleta info.</div>
+    </main>
+  </div>
+  <script src="assets/docs.js"></script>
+</body>
+</html>
